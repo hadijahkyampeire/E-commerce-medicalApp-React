@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
+import { notify } from 'react-notify-toast';
 import {connect} from 'react-redux';
 import '../../App.css';
 import { LoginAction } from '../../redux/Actions/auth/AuthActions';
 
-class Login extends Component{
+export class Login extends Component{
     state = {
         email:'',
         password:''
@@ -19,6 +20,16 @@ class Login extends Component{
         const {email,password}=this.state
         this.props.LoginAction({email,password})
     }
+
+    UNSAFE_componentWillReceiveProps(nextProps) {
+        const { loggedIn } = nextProps;
+        if (loggedIn) {
+          notify.show('logged in successfully', 'success', 3000);
+          this.props.history.push('/dashboard');
+          return;
+        }
+    }
+
     render(){
         const {email, password} = this.state;
         return(
@@ -27,7 +38,7 @@ class Login extends Component{
             <form onSubmit={this.handleLogin}>
       <div className="form-group">
         <label htmlFor="InputEmail1">Enter Email</label>
-        <input type="email" className="form-control" name="email" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value={email} onChange={this.handleInputChange}/>
+        <input type="email" className="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email" value={email} onChange={this.handleInputChange}/>
       </div>
       <div className="form-group">
         <label htmlFor="InputPassword1">Password</label>

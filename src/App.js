@@ -1,26 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {Route, BrowserRouter, Switch} from 'react-router-dom';
+import Notifications from 'react-notify-toast';
+import {Provider} from 'react-redux';
 import './App.css';
+import store from './redux/reducers/index';
+import Landing from './components/Landing';
+import Dashboard from './components/Dashboard/dashboard';
+
 
 class App extends Component {
   render() {
     return (
+      <Provider store={store}>
+      <BrowserRouter>
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <Notifications/>
+      <Switch>
+       <Route exact path="/" component={Landing}/>
+       <Route exact path="/dashboard" component={Dashboard}/>
+       </Switch>
       </div>
+      </BrowserRouter>
+      </Provider>
     );
   }
 }

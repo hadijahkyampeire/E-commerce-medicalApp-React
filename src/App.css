@@ -1,32 +1,161 @@
-.App {
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  margin: 0px;
+  background: linear-gradient(rgba(0, 0, 0, 0.486), rgba(0, 0, 0, 0.486)),url('./resources/images/medicine.jpg') no-repeat;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+.logo {
+  background: url('./resources/images/logoz.jpg');
+  background-size: 4em 4em;
+  display:block;
+  width: 3.5em;
+  height: 3em;
+  float: left;
+  margin-top: 40px;
+}
+.getstarted{
+  border-radius: 2%;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: #32CD32;
+  border: 1px #32CD32 solid;
+  text-transform: uppercase; 
+}
+.info{
+  color: #fff;
+  padding-top: 20%;
+  display: block;
+  width: 100%;
+  height: 5px;
+  margin-bottom: 30px;
+
+}
+.info2{
+  float: right;
+  padding-top: 90px;
+  color: #fff;
+  width: 60%;
+  height: 5px;
+  margin-bottom: 30px;
+}
+.row{
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+
+h3{
+  font-weight: 200;
+  text-transform: uppercase; 
+  padding-top: 60px;
+  color:#32CD32;
+}
+
+nav{
+  background-color: rgb(255, 255, 255);
+}
+section{
+  background-color: white;
+}
+.main-nav{
+  float: right;
+  list-style: none;
+  margin-top: 60px;
+}
+.main-nav li {
+  display: inline-block;
+  margin-left: 40px;
+}
+.main-nav li a:link,
+.main-nav li a:visited {
+  padding: 8px 0;
+  color:black;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 90%;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+border-bottom: 2px solid #32CD32;
+}
+
+/*-----------------*/
+/* Photos section */
+/*-----------------*/
+.section-medicine{
+  padding: 20px;
+}
+.medicine-showcase{
+  list-style: none;
+  width: 100%;
+}
+.medicine-showcase li{
+  display: block;
+  float: left;
+  width: 25%;
+}
+.medicine-photo{
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+.medicine-photo img{
+  opacity: 0.7;
+  width: 100%;
+  height: auto;
+  transform: scale(1.15);
+  transition: transform 0.5s , opacity 0.5s;
+}
+.medicine-photo img:hover{
+  transform: scale(1);
+
+}
+
+/*footer*/
+footer{
+  background-color: #000;
+  color: #32CD32;
+  padding: 5px;
+  text-align: center;
+}
+.word{
+  margin-bottom: 0px;
+}
+
+/*login*/
+.login{
+  width:190px;
+  padding-right: 5px;
+  padding-left: 5px;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+#add-medicine{
+  color: #32CD32;
+  text-shadow: 1px 1px 1px #ccc;
+  font-size: 1.5em;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.add-btn{
+  border-radius: 5px;
+  margin-top:20px;
+  margin-left:10px;
 }
-
-.App-link {
-  color: #61dafb;
+.dashboard{
+  background-color: rgba(0, 0, 0, 0.473);
+  background-size: cover;
+  height: 700px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.medicine-card{
+  width: 18rem;
 }

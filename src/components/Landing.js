@@ -6,8 +6,9 @@ import injections from '../resources/images/injections.jpeg';
 import Login from './auth/Login';
 import {connect} from 'react-redux';
 import { SignupAction } from '../redux/Actions/auth/AuthActions';
+import  AdminLogin  from './auth/AdminLogin';
 
-class Landing extends Component {
+export class Landing extends Component {
     state = {
         username:'',
         email:'',
@@ -39,7 +40,7 @@ class Landing extends Component {
                 <ul className="main-nav">
                     <li><a href="!#">About Us</a></li>
                     <li><a href="!#" >How it works</a></li>
-                    <li><a href="!#"data-toggle="modal" data-target="#signupModal">Get Started</a></li>
+                    <li><a href="!#" data-toggle="modal" data-target="#adminModal">Get Started as admin</a></li>
                     <li className="dropdown"><a href="!#" className="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuLink">Sign In</a>
                     <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <Login/>
@@ -53,7 +54,7 @@ class Landing extends Component {
             <h3>What We Do</h3>
             <p>Provide an online platform for people to order medicines <br/>
             rather than spending time in lines waiting.</p>
-            <button className="btn getstarted" data-toggle="modal" data-target="#signupModal">Get started <i className="fa fa-arrow-right"/></button>
+            <button className="btn getstarted" data-toggle="modal" data-target="#signupModal"> Get started as user <i className="fa fa-arrow-right"/></button>
             </div>
             <div className="row info2">
             <h3>Why We Do</h3>
@@ -127,12 +128,13 @@ class Landing extends Component {
         <label htmlFor="confirmInputPassword1">Confirm Password</label>
         <input type="password" className="form-control" name="passwordConf" id="confirmInputPassword1" placeholder="Password again" value={passwordConf}  onChange={this.handleInputChange}/>
       </div>
-      <button type="submit" className="btn btn-success">SignUp</button>
+      <button type="submit" className="btn btn-success .signup-btn">SignUp</button>
     </form>
       </div>
     </div>
   </div>
 </div>
+<AdminLogin/>
 </div>
             
         );
